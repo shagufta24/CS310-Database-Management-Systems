@@ -23,6 +23,8 @@ select loc as 'Location not offering engg' from campus where engg = false;
 -- Query 8
 select (select sum(cap) from campus where engg = true) / (select sum(cap) from campus where engg = false) as 'Ratio of students in the campuses that provide stem to those who do not';
 
+select (select sum(cap) from campus where engg = true) as 'Stem provided', (select sum(cap) from campus where engg = false) as 'No Stem provided' from campus group by 1;
+
 -- Query 9
 select * from student where sci > 70 and math > 70 and eng > 70 and social > 70 and sports > 70;
 
