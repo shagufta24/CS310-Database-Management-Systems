@@ -3,6 +3,8 @@ select name, dob, timestampdiff(year, dob, CURDATE()) as age from student where 
 
  -- Query 2
 
+select count(case when gender = 'M' then 1 end) as qualified_males, count(case when gender = 'F' then 1 end) as qualified_females from student where timestampdiff(year, dob, curdate()) >= 20;
+
 -- SELECT 
 --     (SELECT count(*) FROM student 
 --         WHERE gender = 'M' AND timestampdiff(year, dob, CURDATE()) >= 20) 
@@ -13,14 +15,13 @@ select name, dob, timestampdiff(year, dob, CURDATE()) as age from student where 
 -- FROM student
 -- group by 1;
 
-select count(case when gender = 'M' then 1 end) as male_count, count(case when gender = 'F' then 1 end) as female_count from student where timestampdiff(year, dob, curdate()) >= 20;
-
 -- Query 3
 
 select count(*) as student_count from student where math > (math + sci + eng + social + sports)/5;
 
 -- Query 4
-
+-- South - 5 and 6
+-- West - 3 and 4
 select (select sum(cap) from campus where pincode REGEXP '^[56]') as south_zone, ':', (select sum(cap) from campus where pincode REGEXP '^[34]') as west_zone from campus group by 1;
 
 -- Query 5
