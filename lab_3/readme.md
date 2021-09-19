@@ -1,8 +1,8 @@
 # Endpoints request body format:
 
-# /user/register [POST] : add user to the db
+## /user/register [POST] : add user to the db
 
-## Request body:
+### Request body:
 
 ```
 {
@@ -20,9 +20,9 @@
 }
 ```
 
-# /user/update [POST] : update the user data in the db
+## /user/update [POST] : update the user data in the db
 
-## Request body:
+### Request body:
 
 student_obj contains the fields that need to be updated.
 
@@ -36,9 +36,9 @@ student_obj contains the fields that need to be updated.
 }
 ```
 
-# /user/delete [POST] : delete the user data from the db
+## /user/delete [POST] : delete the user data from the db
 
-## Request body:
+### Request body:
 
 Contains only the rollno for the record to be deleted.
 
@@ -48,4 +48,4 @@ Contains only the rollno for the record to be deleted.
 }
 ```
 
-# /user/view [GET] : view all the users in the db
+## /user/view [GET] : view all the users in the db
