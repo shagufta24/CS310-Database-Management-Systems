@@ -40,6 +40,9 @@ alter table campus add primary key(cid);
 -- dropping columns from student
 alter table student drop math, drop sci, drop eng, drop social, drop sports;
 
+-- adding rollno foreign key
+alter table student add constraint fk_rollno foreign key (rollno) references marks_sem1(rollno);
+
 -- adding cid column and inserting rows
 alter table student add column cid int;
 
@@ -55,12 +58,11 @@ update student set cid = 109 where rollno = 52;
 update student set cid = 109 where rollno = 34;
 update student set cid = 110 where rollno = 46;
 
--- adding foreign keys
-alter table student add constraint fk_rollno foreign key (rollno) references marks_sem1(rollno);
+-- adding campus id foreign key
 alter table student add constraint fk_cid foreign key (cid) references campus(cid);
 
 -- EXTRA: Altering student table definition
-alter table student modify team char(1) default 'R';
-alter table student modify gender char(1) default 'M';
-alter table student alter dob set default '2001-01-01';
-alter table student alter yjoin set default '2019';
+-- alter table student modify team char(1) default 'R';
+-- alter table student modify gender char(1) default 'M';
+-- alter table student alter dob set default '2001-01-01';
+-- alter table student alter yjoin set default '2019';
